@@ -1,0 +1,7 @@
+Zongo,Alliance des pas-reveillés-le-matin,Troll,37,2
+Chewie,Alliance des pas-reveillés-le-matin,Wookie,31,0
+Mitraël,Elfes Elfiques,Elfe,12,12
+Éléoïr-la-Laitue,Elfes Elfiques,Elfe,10,21
+Don Perignon,Adorateurs de la pièce d'or,Humain,10,165431
+Groumph,Adorateurs de la pièce d'or,Wookie,27,0
+Mortimer,Les évadés du Disque-Monde,Not defined,-256,0
