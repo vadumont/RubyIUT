@@ -19,8 +19,10 @@
 #  
 #  
 
-
+# Class which represents an arbinary tree sorted
 class Arbre
+	# Initializer of the class Arbre
+	# @param elem [Integer] represents the root of the nud
 	def initialize(elem:)
 		@elemG = nil
 		@elemD = nil
@@ -28,6 +30,8 @@ class Arbre
 		
 	end
 	
+	# Insert elemN in the tree
+	# @param elemN [Integer] the element to add in the tree
 	def insert(elemN:)
 		if(elemN < elem)
 			if(elemG.nil?)
@@ -50,7 +54,7 @@ class Arbre
 		end
 	end
 	
-	
+	# Method to_s redefined 
 	def to_s
 		"#{elem} => [#{elemG} ; #{elemD}]"
 	end
