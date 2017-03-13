@@ -22,29 +22,6 @@
 #coding: utf-8
 
 module Unaccent
-	# Will add the method to_us in the class String
-	class::String
-		# Replace all accents by the basic letter corresponding
-		def to_us
-		
-			accents = { ['à','â','ä'] => 'a',['Ä','Â','À'] => 'A',
-			['é','è','ê','ë'] => 'e', ['Ë','É','È','Ê'] => 'E',
-			['î','ï'] => 'i', ['Ï','Î'] => 'I',
-			['ô','ö'] => 'o', ['Ö','Ô'] => 'O',
-			['ù','û','ü'] => 'u', ['Ü','Û','Ù'] => 'U',
-			['ç'] => 'c', ['Ç'] => 'C'}
-			str = self.to_s
-		
-			accents.each do |accent, echange|
-				accent.each do |c|
-					str.gsub!(c,echange)
-				end
-			
-			end
-			return str
-		end
-	
-	end
 	
 	# Will add the method to_us at any class which include Unaccent
 	def to_us

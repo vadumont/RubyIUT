@@ -33,6 +33,12 @@ $LOAD_PATH.unshift(
 
 require 'moduleMixin'
 
+class String
+	include Unaccent
+end
+
+puts "éàé".to_us
+
 t = Test.new('Cécî èst ùne phräse')
 puts t.to_us
 
