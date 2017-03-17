@@ -1,0 +1,7 @@
+{
+	Troll: {
+	habilete : 6,
+	pv : 17,
+	chance : 6
+	}
+}

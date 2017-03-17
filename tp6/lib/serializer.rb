@@ -1,6 +1,6 @@
-#  personnage.rb
+#  serializer.rb
 #  
-#  Copyright 2017 Valentin Dumont <vadumont2@b12-233>
+#  Copyright 2017 Valentin <valentin@amadeus>
 #  
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -18,46 +18,37 @@
 #  MA 02110-1301, USA.
 #  
 #  
-require 'serializer'
 
-class Personnage
+require 'personnage'
 
-
-	include Printable
+module Printable
 	
-	include Serializable
+	def to_s 
+		msg = "{\n\t#{self.class}: {\n\thabilete : #{self.habilete},\n\tpv : #{pv},\n\tchance : #{chance}\n\t}\n}"
+	end
+end
 
+module Serializable
+
+	@@counter = 0
+	
 	def initialize
-		@habilete = 6 + jet_de(1)
-		@pv = 12 + jet_de(2)
-		@chance = 6 + jet_de(1)
+		@@counter += 1
+		r = Random.new(1000)
+		@ID = r
 	end
 	
+	def write(ioObj)
 	
-	def jet_de(lances)
-		
-		valeur = 0
-		lances.times do 
-			r = Random.rand(6)
-			valeur = valeur + r
-		end
-		valeur
-	end
-	
-	
-	def force_attaque
-		valeur = habilete + jet_de(2)
-	end
-	
-	
-	def encaisse(degats)
-		@pv -= degats
+	file = File.open(ioObj,"w")
+	msg = "{\n\t#{self.class}: {\n\thabilete : #{self.habilete},\n\tpv : #{pv},\n\tchance : #{chance}\n\t}\n}"
+	file.write(msg)
+	file.close
 	end
 	
 	public
-	attr_reader :habilete
-	attr_reader :pv
-	attr_reader :chance
+	attr_reader :counter
+	attr_reader :ID
 	
 end
 

@@ -2,3 +2,4 @@ classe Troll
 force_attaque {self.des(2)+habilete/2}
 encaisse  { |degats| @pv-=(degats - 1) }
 finclasse
+Troll Groumph Le Sage
